@@ -1,15 +1,38 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Uncanny Perf Test";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    <li><a href="/inline-script">Inline Script</a></li>
+    <li>
+      <a href="/inline-script-module"
+        >Inline Script with Type Module (no imports)</a
+      >
+    </li>
+    <li>
+      <a href="/inline-script-module-import"
+        >Inline Script with Type Module (import)</a
+      >
+    </li>
+    <li>
+      <a href="/inline-script-dynamic-import">Inline Script Dynamic Import</a>
+    </li>
+    <li>
+      <a href="/inline-script-module-dynamic-import"
+        >Inline Script Module Dynamic Import</a>
+    </li>
+    <li><a href="/external-script">External Script</a></li>
+    <li><a href="/external-script-defer">External Script with Defer</a></li>
+    <li><a href="/external-script-async">External Script with Async</a></li>
+    <li>
+      <a href="/external-script-module">External Script with Type Module</a>
+    </li>
+    <li>
+      <a href="/external-script-module-async"
+        >External Script with Type Module and Async</a
+      >
+    </li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Anchor Link and JavaScript";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+  <script type="module" is:inline>
+    console.log("Before blocking-0");
+    performance.mark("before-blocking-0");
+    let startTime = performance.now();
+    while (performance.now() - startTime < 7000) {}
+    performance.mark("after-blocking-0");
+    console.log("After blocking-0");
+    // Note imports get hoisted
+    // https://exploringjs.com/es6/ch_modules.html#sec_advantages-es6-modules
+    import "/test.js";
+  </script>
+</BaseLayout>

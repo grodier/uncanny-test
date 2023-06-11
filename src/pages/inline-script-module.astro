@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Anchor Link and JavaScript";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+  <script is:inline type="module">
+    console.log("Before blocking");
+    performance.mark("before-blocking");
+    let startTime = performance.now();
+    while (performance.now() - startTime < 7000) {}
+    performance.mark("after-blocking");
+    console.log("After blocking");
+  </script>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Anchor Link and JavaScript";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+  <script src="/test.js" type="module" async is:inline></script>
+</BaseLayout>
