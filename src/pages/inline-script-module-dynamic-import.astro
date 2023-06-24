@@ -9,7 +9,7 @@ let pageTitle = "Inline Script Module Dynamic Import";
   </ul>
   <script is:inline type="module">
     (async () => {
-      let moduleSpecifier = "./test.js";
+      let moduleSpecifier = "/test.js";
       await import(moduleSpecifier);
     })();
   </script>

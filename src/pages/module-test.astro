@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+let pageTitle = "Inline Script with Type Module";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+
+  <script defer src="/log-2.js" is:inline></script>
+</BaseLayout>
